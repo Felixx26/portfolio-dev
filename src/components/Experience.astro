@@ -1,0 +1,36 @@
+---
+import ExperienceItem from './ExperienceItem.astro';
+const EXPERIENCE = [
+  {
+    title: 'Software Developer Technical Lead',
+    company: 'Temenos',
+    date: 'Septiembre 2023',
+    description:
+      'Dirigí el equipo de desarrollo de software, así como de la arquitectura de los proyectos. Mejoré la calidad de el código y la productividad del equipo hasta un 30%. Participé en la creación de un sistema de integración contínua. Colaboré activamente con el project manager en la planificación y la estimación de los proyectos. Realicé reuniones con los clientes para la toma de requerimientos y la presentación de los avances.',
+  },
+  {
+    title: 'Senior Software Engineer',
+    company: 'Tevolv',
+    date: 'Diciembre 2020',
+    description:
+      'Revisé el código del cliente en busca de errores y debilidades utilizando métodos de solución de problemas aprobados. Lideré la iniciativa de desarrollo de software como experto en la materia y principal punto de contacto para el personal de gestión de proyectos. Capacité y asesoré a desarrolladores e ingenieros junior, enseñando habilidades en el desarrollo de aplicaciones web y móviles y trabajando para mejorar el desempeño general del equipo. Trabajé con gerentes de proyectos, desarrolladores, control de calidad y clientes para resolver problemas técnicos.',
+  },
+  {
+    title: 'Junior Software Developer',
+    company: 'Nexus Caribbean Technologies',
+    date: 'Abril 2020',
+    description:
+      'Colaboré en las etapas del ciclo de vida del desarrollo de sistemas, desde la recopilación de requisitos hasta los lanzamientos de producción. Colaboré con gerentes de proyectos para seleccionar hitos de codificación ambiciosos pero realistas en el desarrollo de proyectos de software previos al lanzamiento. Bases de código antiguas revisadas, modularizadas y actualizadas según estándares de desarrollo modernos, reduciendo los costos operativos y mejorando la funcionalidad',
+  },
+];
+---
+
+<ol class="relative ml-3 border-s border-gray-200 dark:border-gray-700">
+  {
+    EXPERIENCE.map(experience => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

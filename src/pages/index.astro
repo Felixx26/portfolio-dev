@@ -1,0 +1,83 @@
+---
+import Badge from '../components/Badge.astro';
+import Layout from '../layouts/Layout.astro';
+import Linkedin from '../components/icons/Linkedin.astro';
+import SocialPill from '../components/SocialPill.astro';
+import Github from '../components/icons/Github.astro';
+import Mail from '../components/icons/Mail.astro';
+import Experience from '../components/Experience.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Briefcase from '../components/icons/Briefcase.astro';
+import CodeIcon from '../components/icons/Code.astro';
+import Proyects from '../components/Proyects.astro';
+---
+
+<Layout
+  title="Portfolio de Felix - Desarrollador y programador Web"
+  description="Mi portfolio personal, donde muestro mis proyectos y experiencia laboral."
+>
+  <main class="px-4">
+    <SectionContainer id="top" class="pt-44 pb-44">
+      <div class="flex items-end gap-x-5">
+        <img
+          class="rounded-full size-24 mb-4"
+          src="/profile/profile.webp"
+          alt="My profile"
+        />
+        <div>
+          <h1
+            class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6"
+          >
+            <div class="max-[532px]:text-2xl">Hey, soy Felix</div>
+            <a
+              href="https://www.linkedin.com/in/felix-rafael-garcia-martinez/"
+              target="_blank"
+              rel="noopener"
+              class="flex justify-center items-center"
+            >
+              <Badge>Disponible para trabajar</Badge>
+            </a>
+          </h1>
+        </div>
+      </div>
+      <h2 class="text-xl lg:text-2xl text-pretty max-w-[700px]">
+        <span class="text-white/90">+4 años de experiencia.</span>
+        <span class="text-yellow-200/90">Desarrollador Web.</span>
+        <span class="text-blue-200/90">De Florida, Estados Unidos 🇺🇸.</span>
+        <span class="opacity-80">
+          Especializado en crear aplicaciones únicas.
+        </span>
+      </h2>
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill
+          href="https://www.linkedin.com/in/felix-rafael-garcia-martinez/"
+        >
+          <Linkedin class="size-4 md:size-6" />
+           LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/Felixx26">
+          <Github class="size-4 md:size-6" />
+           Github
+        </SocialPill>
+        <SocialPill href="mailto:felixxrafaell@gmail.com">
+          <Mail class="size-4 md:size-6" />
+           felixxrafaell@gmail.com
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+    <SectionContainer id="experiencia">
+      <h2 class="text-3xl font-semibold flex gap-x-3 mb-6 items-center">
+        <Briefcase class="size-7" />
+         Experiencia laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+    <SectionContainer id="proyectos">
+      <h2 class="text-3xl font-semibold flex gap-x-3 mb-6 items-center">
+        <CodeIcon class="size-7" />
+         Proyectos
+      </h2>
+      <Proyects />
+    </SectionContainer>
+  </main>
+</Layout>

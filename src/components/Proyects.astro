@@ -1,0 +1,112 @@
+---
+import NextJS from './icons/NextJS.astro';
+import TypeScript from './icons/TypeScript.astro';
+import TailwindCSS from './icons/TailwindCSS.astro';
+import Prisma from './icons/Prisma.astro';
+import SchadcnUI from './icons/SchadcnUI.astro';
+import Uploadthing from './icons/Uploadthing.astro';
+import Clerk from './icons/Clerk.astro';
+import Pusher from './icons/Pusher.astro';
+
+const TAGS = {
+  NextJS: {
+    title: 'Next.js',
+    class: 'bg-stone-700/30 text-white border-stone-500/50',
+    icon: NextJS,
+  },
+  TypeScript: {
+    title: 'TypeScript',
+    class: 'bg-stone-700/30 text-white border-[#3178C6]/50',
+    icon: TypeScript,
+  },
+  TailwindCSS: {
+    title: 'Tailwind CSS',
+    class: 'bg-stone-700/30 text-white border-[#38bdf8]/50',
+    icon: TailwindCSS,
+  },
+  Prisma: {
+    title: 'Prisma',
+    class: 'bg-stone-700/30 text-white border-stone-300/50',
+    icon: Prisma,
+  },
+  ShadcnUi: {
+    title: 'Shadcn UI',
+    class: 'bg-stone-700/30 text-white border-stone-500/50',
+    icon: SchadcnUI,
+  },
+  Uploadthing: {
+    title: 'Uploadthing',
+    class: 'bg-stone-700/30 text-white border-rose-500/50',
+    icon: Uploadthing,
+  },
+  Clerk: {
+    title: 'Clerk',
+    class: 'bg-stone-700/30 text-white border-indigo-500/50',
+    icon: Clerk,
+  },
+  Pusher: {
+    title: 'Pusher',
+    class: 'bg-stone-700/30 text-white border-stone-400/50',
+    icon: Pusher,
+  },
+};
+
+const PROYECTS = [
+  {
+    title: 'Discord Clone',
+    description:
+      'Un clon de Discord con funcionalidades básicas como crear salas de chat, enviar mensajes, crear servidores, etc. Cuenta con un sistema de autenticación y autorización, y una base de datos para guardar los datos de los usuarios y los servidores.',
+    link: 'https://discord-clone-by-felixx26.netlify.app/',
+    github: 'https://github.com/Felixx26/discord-clone',
+    image: '/proyects/discord-clone.webp',
+    tags: [
+      TAGS.NextJS,
+      TAGS.TypeScript,
+      TAGS.TailwindCSS,
+      TAGS.Prisma,
+      TAGS.ShadcnUi,
+      TAGS.Uploadthing,
+      TAGS.Clerk,
+      TAGS.Pusher,
+    ],
+  },
+];
+---
+
+{
+  PROYECTS.map(({ title, description, tags, image, github, link }) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-slate-200 text-pretty">{description}</p>
+      <ul class="flex flex-wrap mb-5 gap-4">
+        {tags.map(tag => (
+          <li
+            class={`flex text-sm items-center rounded-full px-4 py-2 gap-x-2 border  ${tag.class}`}
+          >
+            {<tag.icon class="size-5" />}
+            {tag.title}
+          </li>
+        ))}
+      </ul>
+
+      <a target="_blank" rel="noopener noreferrer" href={link}>
+        <img
+          loading="lazy"
+          class="rounded shadow-2xl shadow-white/10 aspect-video hover:scale-105 hover:shadow-violet-700/50 transition"
+          src={image}
+          alt={`Captura de pantalla del proyecto ${title}`}
+        />
+      </a>
+      <div class="flex justify-end mt-6">
+        <a
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm font-semibold text-white hover:text-violet-500 transition"
+        >
+          Ver código
+        </a>
+      </div>
+    </article>
+  ))
+}
